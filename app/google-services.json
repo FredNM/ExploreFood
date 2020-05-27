@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "654750588453",
+    "firebase_url": "https://explorefood-d39a5.firebaseio.com",
+    "project_id": "explorefood-d39a5",
+    "storage_bucket": "explorefood-d39a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654750588453:android:2e5cec5e3917f02c5ba9cc",
+        "android_client_info": {
+          "package_name": "com.frednm.explorefood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "654750588453-olu6o5ltc9punmp1jo6oh258lehnn926.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.frednm.explorefood",
+            "certificate_hash": "21910f79548ffee255126c3a40bc427189fb3815"
+          }
+        },
+        {
+          "client_id": "654750588453-rcrja84g357j79po2im9o63jj4p7mq2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVX2SxHd_cDtRDwthhSrenAf5AOWdETAI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "654750588453-rcrja84g357j79po2im9o63jj4p7mq2n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Authentication activity -->
+    <dimen name="margin_authentication">50dp</dimen>
+    <dimen name="image_dimension">150dp</dimen>
+
+    <dimen name="default_large_margin">20dip</dimen>
+    <dimen name="default_margin">10dip</dimen>
+    <dimen name="default_title_size">20sp</dimen>
+    <dimen name="default_text_size">13sp</dimen>
+    <dimen name="default_text_size_mini">8sp</dimen>
+
+    <dimen name="card_margin">8dp</dimen>
+    <dimen name="recipe_photo_height">300dp</dimen>
+    <dimen name="recipe_photo_height_land">100dp</dimen>
+    <dimen name="recipe_margin">16dp</dimen>
+    <dimen name="recipe_padding">8dp</dimen>
+
+    <dimen name="recipe_title_text_size">32sp</dimen>
+    <dimen name="recipe_body_text_size">22sp</dimen>
+    <dimen name="recipe_body_text_size2">14sp</dimen>
+    <dimen name="recipe_metabar_title_bottom_padding">4dp</dimen>
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_detail_feature"
+    app:startDestination="@id/detailFragment">
+
+    <!-- Detail Fragment -->
+    <fragment android:id="@+id/detailFragment"
+              android:name="com.frednm.explorefood.features.recipe.DetailRecipeFragment"
+              android:label="Recipe's Detail"
+              tools:layout="@layout/fragment_detail_recipe" />
+</navigation>

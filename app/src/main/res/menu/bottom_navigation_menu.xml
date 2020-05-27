@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_favorite"
+        android:enabled="true"
+        android:icon="@drawable/ic_favorite_border_white_24dp"
+        android:title="@string/bottom_navigation_menu_favorite"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_white_24dp"
+        android:title="@string/bottom_navigation_menu_home"
+        app:showAsAction="always" />
+    <!-- always for DPAD navigation !?-->
+    <item
+        android:id="@+id/action_basket"
+        android:enabled="true"
+        android:icon="@drawable/ic_shopping_cart_white_24dp"
+        android:title="@string/bottom_navigation_menu_basket"
+        app:showAsAction="ifRoom" />
+</menu>

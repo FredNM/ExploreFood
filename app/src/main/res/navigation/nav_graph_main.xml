@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main" >
+    <!-- app:startDestination="@id/action_home"
+    Obligé de mettre startDestination ici, car dans le MainActivity il y'a un nav_graph dans <fragment>
+     Mais en réalité, ce startDestination ne sert à rien, car il est configuré dans MainActivity;
+      il vaudra action_home ou fragment_authentication selon la condition qui s'y trouve
+      En fait, le plus cohérent aurait été de retirer nav_graph du <fragment> du activity_main.xml, pour pouvoir
+      donc aussi retirer app:startDestination ici, et setUp le nav_graph du <fragment> dans MainActivity, puis
+      setUp aussi le startDestination -->
+    <!-- Finalement c'est ce que j'ai fait, j'ai retiré nav_graph du activity_main.xml, et je l'ai configuré dans le
+    MainActivity, après avoir dit sous quelle condition on choisissait le startDestination -->
+    <!-- The start destination is set in the MainActivity, because it varies
+     depending on if user is authenticated or no -->
+
+    <!-- MAIN ACTIVITY -->
+    <fragment
+        android:id="@+id/fragment_authentication"
+        android:name="com.frednm.explorefood.features.authentication.AuthenticationFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_authentication">
+        <!-- Go to Detail Fragment (Its graph is responsible to handle response) -->
+        <action android:id="@+id/fragment_authentication_to_action_home"
+            app:destination="@id/action_home"/>
+        <!-- app:enterAnim="@anim/nav_default_pop_enter_anim"
+        app:exitAnim="@anim/nav_default_pop_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" -->
+        <!-- TODO : voir si on peut passer des animations customisées
+        utilisant ces attributs -->
+    </fragment>
+
+    <fragment
+        android:id="@+id/action_home"
+        android:name="com.frednm.explorefood.features.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <!-- Go to Detail Fragment (Its graph is responsible to handle response) -->
+        <action android:id="@+id/action_home_fragment_to_recipe_fragment"
+            app:destination="@id/recipe_home"/>
+        <!-- app:enterAnim="@anim/nav_default_pop_enter_anim"
+        app:exitAnim="@anim/nav_default_pop_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" -->
+        <!-- TODO : voir si on peut passer des animations customisées
+        utilisant ces attributs -->
+    </fragment>
+
+    <fragment
+        android:id="@+id/recipe_home"
+        android:name="com.frednm.explorefood.features.recipe.RecipeFragment"
+        android:label="Online Recipes"
+        tools:layout="@layout/fragment_recipe">
+        <!-- Go to Detail Fragment (Its graph is responsible to handle response) -->
+        <argument android:name="ingredients" app:argType="string[]"/>
+        <action android:id="@+id/action_recipe_fragment_to_detail_fragment"
+            app:destination="@id/fragment_detail_recipe"/>
+        <!-- app:enterAnim="@anim/nav_default_pop_enter_anim"
+        app:exitAnim="@anim/nav_default_pop_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" -->
+    </fragment>
+
+    <fragment
+        android:id="@+id/action_favorite"
+        android:name="com.frednm.explorefood.features.recipe.RecipeFragment"
+        android:label="Favorite Recipes"
+        tools:layout="@layout/fragment_recipe">
+        <!-- Go to Detail Fragment (Its graph is responsible to handle response) -->
+        <action android:id="@+id/action_recipe_fragment_to_detail_fragment"
+            app:destination="@id/fragment_detail_recipe"/>
+            <!-- app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" -->
+    </fragment>
+
+    <fragment
+        android:id="@+id/action_basket"
+        android:name="com.frednm.explorefood.features.recipe.RecipeFragment"
+        android:label="Basket Recipes"
+        tools:layout="@layout/fragment_recipe">
+        <!-- Go to Detail Fragment (Its graph is responsible to handle response) -->
+        <action android:id="@+id/action_recipe_fragment_to_detail_fragment"
+            app:destination="@id/fragment_detail_recipe"/>
+        <action android:id="@+id/action_recipe_fragment_to_restaurant_fragment"
+            app:destination="@id/fragment_restaurant"/>
+        <!-- app:enterAnim="@anim/nav_default_pop_enter_anim"
+        app:exitAnim="@anim/nav_default_pop_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" -->
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_detail_recipe"
+        android:name="com.frednm.explorefood.features.recipe.DetailRecipeFragment"
+        android:label="Recipe's Detail"
+        tools:layout="@layout/fragment_detail_recipe"/>
+
+    <fragment
+        android:id="@+id/fragment_restaurant"
+        android:name="com.frednm.explorefood.features.restaurant.RestaurantFragment"
+        android:label="Restaurants"
+        tools:layout="@layout/fragment_restaurant"/>
+
+    <include app:graph="@navigation/nav_graph_recipe"/>
+
+</navigation>

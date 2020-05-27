@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="recipe"
+            type="com.frednm.explorefood.data.model.Recipe" />
+        <variable
+            name="viewmodel"
+            type="com.frednm.explorefood.features.recipe.RecipeViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        tools:layout_width="160dp"
+        android:onClick="@{() -> viewmodel.userClicksOnItem(recipe)}">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <ImageView
+                android:id="@+id/recipe_poster"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:contentDescription="@string/image_recipe"
+                android:scaleType="centerCrop"
+                imageUrl="@{recipe.imageUrl}"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/scrim"
+                android:layout_gravity="bottom"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/recipe_rl"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="bottom">
+
+                <TextView
+                    android:id="@+id/recipe_title"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/recipe_heart"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/white"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:text="@{recipe.label}"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                    tools:text="Bean Hummus with Eggplant &amp; Pine Nuts ean Hummus with Eggplant &amp; Pine Nuts" />
+
+                <ImageView
+                    android:id="@+id/recipe_heart"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="@string/recipe_favorite"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/recipe_shopping"
+                    android:layout_marginEnd="20dp"
+                    isSelected="@{recipe.userFavorite}"
+                    android:onClick="@{(view) -> viewmodel.userClicksOnFavoriteButton(view,recipe)}"
+                    app:srcCompat="@drawable/selector_favorite_image"
+                    android:scaleType="fitCenter"/>
+                <!-- app:backgroundTint="@drawable/button_favorite_selector_color" -->
+
+                <ImageView
+                    android:id="@+id/recipe_shopping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/add_recipe_in_basket"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="10dp"
+                    isSelected="@{recipe.inBasket}"
+                    android:onClick="@{(view) -> viewmodel.userClicksOnBasketButton(view,recipe)}"
+                    app:srcCompat="@drawable/selector_basket_image" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

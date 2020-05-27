@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    >
+    <data>
+        <variable name="restaurant"
+            type="com.frednm.explorefood.data.model.Restaurant"/>
+    </data>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        >
+
+        <androidx.cardview.widget.CardView android:layout_width="wrap_content"
+            app:cardCornerRadius="7dp"
+            android:layout_height="wrap_content">
+
+            <ImageView android:layout_width="120dp"
+                android:id="@+id/thumbImageView"
+                android:layout_height="90dp"
+                android:contentDescription="@string/image_restaurant"
+                tools:src="@drawable/thumb"
+                imageUrl="@{restaurant.thumbnail}"
+                android:scaleType="fitXY"
+                />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical">
+
+            <TextView android:layout_width="match_parent"
+                android:id="@+id/nameTextView"
+                android:textSize="18sp"
+                android:textColor="@color/black_effective"
+                android:text="@{restaurant.name}"
+                android:layout_height="wrap_content"/>
+
+            <TextView android:layout_width="match_parent"
+                android:id="@+id/localityTextView"
+                android:textSize="13dp"
+                android:textColor="@color/dark_gray"
+                android:text="@{restaurant.location.locality}"
+                android:layout_height="wrap_content"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                cardColor="@{restaurant.rating.aggregate}"
+                app:cardBackgroundColor="@color/colorAccent"
+                app:cardCornerRadius="2dp"
+                app:cardElevation="0dp"
+                android:layout_marginStart="2dp"
+                >
+
+                <TextView android:layout_width="match_parent"
+                    android:id="@+id/ratingTextView"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@{restaurant.rating.aggregate}"
+                    android:layout_height="wrap_content"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView android:layout_width="match_parent"
+                android:id="@+id/rating_TextTextView"
+                android:textColor="@color/black_effective"
+                android:textSize="15sp"
+                android:text="@{restaurant.rating.text}"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

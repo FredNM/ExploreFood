@@ -1,0 +1,50 @@
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="56dp"
+    android:height="56dp"
+    android:tint="@color/yellow"
+    android:viewportHeight="56.0"
+    android:viewportWidth="56.0">
+
+    <!-- Le graphe est séparé en 2 cotés car il sera ouvert par le milieu
+     quand utilisateur va désélectionner le bouton favorite -->
+    <group
+        android:pivotX="28"
+        android:pivotY="33"
+        android:scaleX="2.3"
+        android:scaleY="2.3">
+        <path
+            android:pathData="@string/heart_stroke_left"
+            android:strokeColor="@android:color/white"
+            android:strokeWidth="2"/>
+
+        <path
+            android:pathData="@string/heart_stroke_right"
+            android:strokeColor="@android:color/white"
+            android:strokeWidth="2"/>
+    </group>
+
+    <!-- clip-path c'est ce qu'on va remplir dans notre dessin ! Et c'est
+     le remplissage que j'anime justement au-niveau de l'avd, donc cette
+     partie ; on y voit bien qu'on anime la cible de nom target -->
+    <group android:name="filled"
+        android:pivotX="28"
+        android:pivotY="33"
+        android:scaleX="2.3"
+        android:scaleY="2.3">
+        <clip-path
+            android:name="clip"
+            android:pathData="@string/heart_clip_hidden"/>
+        <path
+            android:fillColor="@color/yellow"
+            android:pathData="@string/heart_full_path"/>
+    </group>
+
+</vector>
+
+
+    <!-- <vector android:height="24dp" android:tint="@color/yellow"
+        android:viewportHeight="24.0" android:viewportWidth="24.0"
+        android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+        <path android:fillColor="#FF000000" android:pathData="M12,21.35l-1.45,-1.32C5.4,15.36 2,12.28 2,8.5 2,5.42 4.42,3 7.5,3c1.74,0 3.41,0.81 4.5,2.09C13.09,3.81 14.76,3 16.5,3 19.58,3 22,5.42 22,8.5c0,3.78 -3.4,6.86 -8.55,11.54L12,21.35z"/>
+    </vector> -->

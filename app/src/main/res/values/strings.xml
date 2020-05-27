@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">ExploreFood</string>
+
+    <!-- Widget -->
+    <string name="appwidget_text">ExploreFood</string>
+
+    <!-- AuthenticationActivity -->
+    <string name="authentication_description"> Welcome to the ExploreFood app! Please log in!</string>
+    <string name="connection_succeed">Authentication succeeded!</string>
+    <string name="error_not_connected">Please log in first!</string>
+    <string name="error_authentication_canceled">Authentication canceled&#8230;</string>
+    <string name="error_no_internet">No network connexion!</string>
+    <string name="error_unknown_error">Unknown error!</string>
+    <string name="login_text_logged">Connected</string>
+    <string name="login_text_not_logged">Login</string>
+
+    <!-- MainActivity -->
+    <string name="bottom_navigation_menu_favorite">Favorite</string>
+    <string name="bottom_navigation_menu_home">Home</string>
+    <string name="bottom_navigation_menu_basket">Basket</string>
+    <string name="top_bar_menu_rtl">RTL</string>
+    <string name="pref_bottom_view_action">prefBottomBarAction</string>
+    <string name="pref_location_latitude">prefLocationLatitude</string>
+    <string name="pref_location_longitude">prefLocationLongitude</string>
+
+    <!-- Fragment Authentication -->
+    <string name="pref_authentication">prefAuthentication</string>
+
+    <!-- Fragment Home -->
+    <string name="home_title"> What do you have at home?</string>
+    <string name="ingredient_label"> List of your ingredients</string>
+    <string name="chips_label"> Cuisine Type </string>
+    <string name="ingredient_placeholder">Cheese, Chicken, Salad ...</string>
+    <string name="add_button">Add</string>
+    <string name="clear_button">clear</string>
+    <string name="search_recipes">Search for recipes</string>
+
+    <!-- Fragment Recipe -->
+    <string name="no_network">Please turn on your network connexion!</string>
+    <string name="an_error_happened">An error happened. Please retry!</string>
+    <!-- Item Recipe -->
+    <string name="recipe_poster">Recipe poster</string>
+    <string name="search_restaurants">Search for restaurants</string>
+
+    <!-- Fragment Detail Recipe -->
+    <string name="go_to_original_recipe">Go to original recipe</string>
+    <string name="ingredients">Ingredients : </string>
+    <string name="pref_isTablet">prefIsTablet</string>
+
+    <!-- Content description -->
+    <string name="image_restaurant">Restaurant Image</string>
+    <string name="image_recipe">Recipe Image</string>
+    <string name="image_error">Error Image</string>
+    <string name="image_authentication">Authentication Image</string>
+    <string name="recipe_favorite">Is Recipe Favorite</string>
+    <string name="add_recipe_in_basket">Add Recipe In Basket</string>
+
+</resources>
